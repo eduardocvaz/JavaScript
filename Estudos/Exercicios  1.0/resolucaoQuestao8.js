@@ -11,32 +11,32 @@
  */
 
 
- function pontuacao(stringPontuacoes){
-    let resultado = [0,0]
-    let record = 0
+function pontuacao(stringPontuacoes) {
+    let resultado = [0, 0]
+    let record = stringPontuacoes[0]
     let maisBaixa = 100000
 
-    stringPontuacoes=stringPontuacoes.split(',')
+    stringPontuacoes = stringPontuacoes.split(',')
 
-    for (let i = 0; i < stringPontuacoes.length; i++) {
-        if (stringPontuacoes[i]>record) {
-            record=stringPontuacoes[i]
+    for (let i = 1; i < stringPontuacoes.length; i++) {
+        if (stringPontuacoes[i] > record) {
+            record = stringPontuacoes[i]
             resultado[0]++
         }
-        if (stringPontuacoes[i]<maisBaixa) {
+        if (stringPontuacoes[i] < maisBaixa) {
             maisBaixa = stringPontuacoes[i]
-            resultado[1]=i
+            resultado[1] = i
         }
     }
 
     return `
     Vezes que superou o record:${resultado[0]}\n
-    Numero da partida com pior resultado ${resultado[1]+1}\n
+    Numero da partida com pior resultado ${resultado[1] + 1}\n
     Melhor pontuação ${record}\n
     Pior pontuação ${maisBaixa}\n
     `
- }
+}
 
- let stringPontuacoes = "30,40,20,4,51,25,42,38,56,0"
+let stringPontuacoes = "30,40,20,4,51,25,42,38,56,0"
 
- console.log(pontuacao(stringPontuacoes))
+console.log(pontuacao(stringPontuacoes))
