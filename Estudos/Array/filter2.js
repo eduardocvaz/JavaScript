@@ -20,4 +20,4 @@ const produtos = [
 const caro = produto => produto.preco >= 500
 const fragil = produto => produto.fragil
 
-console.log(produtos.filter(caro).filter(fragil))
+console.log(produtos.filter2(caro).filter2(fragil))
